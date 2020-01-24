@@ -1,0 +1,47 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class=" col col-md-2 "><a href="/dashboard/shopkeeper/existingcustomer/<%=use%>" class="btn btn-danger btn-lg btn-block">search customer</a></div>
+			<div class="col col-md-2 offset-md-7" ><h1 ><span class="badge badge-light" ><%=user.name%></span> </h1></div>
+			
+			<div class="col col-md-1" ><a href="/users/logout" class="btn btn-secondary btn-lg btn-block" style="float:right;" >Logout</a></div>
+			
+			
+			
+		</div>
+		<div class="row justify-content-md-center pt-5 mb-5">
+			
+			<div class="col offset-md-2 ">
+				
+				<h3 > His total wash <h1 class="mb-3"><span class="badge badge-success"><%=user.washno%></span></h1></h3>
+				<h1 style="display: inline-block;"><a href="/dashboard/shopkeeper/<%=use%>/<%=user.email%>"><i class="fas fa-minus-circle"></i></a></h1>
+				<h1 class="pb-4" style="display: inline-block;"><a href="/dashboard/shopkeeper/<%=use%>/<%=user.email%>/plus"><i class="fas fa-plus-circle"></i></a></h1>
+				
+			</div>
+		</div>
+		<div class="row">
+				<% for (var i = user.alldates.length-1; i >= 0; i--) { %>
+				<div class="card col-md-3" style="width: 18rem;">
+  					<img class="card-img-top" src="https://autoportal.com/img/new-cars-gallery/tata/harrier/exterior/fcfcf650/tata-harrier-fcfcf650-1600x1200.jpg" alt="Card image cap">
+					  <div class="card-body">
+					    <p class="card-text"><h3><span class="badge badge-info"><%=i+1%></span>  <span class="badge badge-light"><%= user.alldates[i]%></span></h3></p>
+					  </div>
+				</div>
+				<%}%>
+			</div>
+		
+	</div>
+	
+
+</body>
+</html>

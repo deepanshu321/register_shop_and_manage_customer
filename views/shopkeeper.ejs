@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+
+<body>
+	<img style=" position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;" src="/images/backcover.jpg">
+	<div class="row mt-3">
+		<div class=" col col-md-2 "><a href="/dashboard" class="btn btn-success btn-lg btn-block">Home</a></div>
+	<div class="col col-md-1 offset-md-9" ><a href="/users/logout" class="btn btn-secondary btn-lg btn-block" style="float:right;" >Logout</a></div>
+
+	</div>
+<div class="row mt-5">
+	
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Shopkeeper ID</h1>
+     <% include ./partials/messages %>
+      <form action="/dashboard/shopkeeper" method="POST">
+      	<div class="form-group">
+          <label for="shop name">Shop Name</label>
+          <select class="form-control" name="shopname" >
+          	<%for(var i=0;i<shopregister.length;i++){%>
+          	 <option ><%=shopregister[i]%></option>
+         	 <% }%>
+			 
+			  
+			</select>
+
+        </div>
+        <div class="form-group">
+          <label for="password">Shopkeeper id</label>
+          <input
+            type="password"
+            id="password"
+            name="shopkeeperpassword"
+            class="form-control"
+            placeholder="Enter Shopkeeper id"
+          />
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      </form>
+       <p class="lead mt-4">
+        New Shopkeeper? <a href="/dashboard/newshopkeeper">Click here</a>
+      </p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

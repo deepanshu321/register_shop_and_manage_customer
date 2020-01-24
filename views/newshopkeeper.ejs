@@ -1,0 +1,83 @@
+<video autoplay muted loop  style="position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;">
+      <source src="/videos/snow.mp4">
+    </video>
+    <div class="row mt-3">
+    <div class=" col col-md-2 "><a href="/dashboard" class="btn btn-success btn-lg btn-block">Home</a></div>
+  <div class="col col-md-1 offset-md-9" ><a href="/users/logout" class="btn btn-secondary btn-lg btn-block" style="float:right;" >Logout</a></div>
+
+  </div>
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h1 class="text-center mb-3">
+        <i class="fas fa-user-plus"></i> New shopkeeper 
+      </h1>
+      <% include ./partials/messages %>
+      <form action="/dashboard/newshopkeeper" method="POST">
+        <div class="form-group">
+          <label for="name">Shop Name</label>
+          <input
+            type="name"
+            id="name"
+            name="name"
+            class="form-control"
+            placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter Email"
+            value="<%= typeof email != 'undefined' ? email : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="number">Contact No.</label>
+          <input
+            type="number"
+            id="phoneno"
+            name="phoneno"
+            class="form-control"
+            placeholder="Enter Phone No."
+            value="<%= typeof phoneno != 'undefined' ? phoneno : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Shopkeeper Id</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Create Shopkeeper Id"
+            value="<%= typeof password != 'undefined' ? password : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password2">Confirm Shopkeeper Id</label>
+          <input
+            type="password"
+            id="password2"
+            name="password2"
+            class="form-control"
+            placeholder="Confirm Shopkeeper Id"
+            value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Register your shop
+        </button>
+      </form>
+      <p class="lead mt-4">Already have a shopkeeper id <a href="/dashboard/shopkeeper">Click here</a></p>
+    </div>
+  </div>
+</div>
